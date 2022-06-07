@@ -1,4 +1,4 @@
-name: test
+name: CI pipline Angular Build
 
 on: push
 
@@ -19,12 +19,6 @@ jobs:
           run: npm test -- --watch=false --browsers=ChromeHeadless
         - name: Ng build
           run: npm run build
-  
-
-
-  building_docker_image:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Docker image build
-        run: docker build . --file Dockerfile --tag test-task
+        - uses: actions/checkout@v3
+        - name: Docker image build
+          run: docker build . --file Dockerfile --tag test-task
