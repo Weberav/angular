@@ -18,7 +18,7 @@ jobs:
         - name: Test
           run: npm test -- --watch=false --browsers=ChromeHeadless
         - name: Ng build
-          run: npm run build -- --prod
+          run: npm run build
   
 
 
