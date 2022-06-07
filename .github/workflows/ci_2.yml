@@ -3,7 +3,7 @@ name: test
 on: push
 
 jobs:
-  build:
+  build and test:
       runs-on: ubuntu-latest
       steps:
 
@@ -15,10 +15,10 @@ jobs:
 
         - name: Setup
           run: npm ci
+        - name: Test
+          run: npm test -- --configuration=ci
 
-       #- name: Test
-         #run: |
-           # npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+       
   docker:
     runs-on: ubuntu-latest
     steps:
