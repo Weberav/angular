@@ -17,14 +17,9 @@ jobs:
           run: npm ci
         - name: Test
           run: npm test -- --watch=false --browsers=ChromeHeadless
-
-  ng_build:
-    runs-on: ubuntu-latest
-    steps:
-
-      - uses: actions/checkout@v2
-      - name: Build Angular
-        run: npm run build -- --prod
+        - name: Ng build
+          run: npm run build -- --prod
+  
 
 
   building_docker_image:
