@@ -18,7 +18,7 @@ jobs:
         - name: Test
           run: npm test -- --watch=false --browsers=ChromeHeadless
 
-  ng build:
+  ng_build:
     runs-on: ubuntu-latest
     steps:
 
