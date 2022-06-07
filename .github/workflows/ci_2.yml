@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/checkout@v2
       - name: Build Angular
-        run: ng build
+        run: npm run build -- --prod
 
 
   building_docker_image:
