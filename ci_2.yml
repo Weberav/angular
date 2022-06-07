@@ -1,0 +1,35 @@
+name: test
+
+on: push
+
+jobs:
+  build_and_test:
+      runs-on: ubuntu-latest
+      steps:
+
+        - uses: actions/checkout@v2
+        - name: Use Node.js 14.x
+          uses: actions/setup-node@v1
+          with:
+            node-version: 14.x
+
+        - name: Setup
+          run: npm ci
+        - name: Test
+          run: npm test -- --watch=false --browsers=ChromeHeadless
+
+  ng_build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+      - name: Build Angular
+        run: npm run build -- --prod
+
+
+  building_docker_image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Docker image build
+        run: docker build . --file Dockerfile --tag test-task
