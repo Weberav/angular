@@ -1,0 +1,6 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  my_test_task:
+    image: ghcr.io/weberav/test-task:sha-f8b23f6
+    ports:
+      - "8383:80"
